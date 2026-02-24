@@ -1,12 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Todos } from "./MyComponents/todos/todos";
+import { AddTodo } from "./MyComponents/add-todo/add-todo";
+import {Sheet} from "./MyComponents/sheet/sheet";
+import { FormsModule } from '@angular/forms';
+import {Tab, Tabs, TabList, TabPanel, TabContent} from '@angular/aria/tabs';
+
+// import { RouterOutlet } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,  
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
+  imports: [Todos, FormsModule,AddTodo,Tab, Tabs, TabList, TabPanel, TabContent,Sheet]
 })
-export class App {
-  protected readonly title = signal('mini_project');
+export class App{
+  title = 'banana bread';
+  constructor(){}
 }
+   

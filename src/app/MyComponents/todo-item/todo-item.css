@@ -1,0 +1,27 @@
+.my-3 {
+  margin: 1rem 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.nostrike {
+  text-decoration: none;
+  color: #000;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #c82333;
+}
