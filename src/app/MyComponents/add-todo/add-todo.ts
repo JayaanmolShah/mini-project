@@ -5,21 +5,27 @@ import { Todo } from '../../Todo';
 @Component({
   selector: 'app-add-todo',
   imports: [CommonModule,FormsModule],
+  standalone: true,
   templateUrl: './add-todo.html',
-  styleUrl: './add-todo.css',
+  styleUrls: ['./add-todo.css'],
 })
 export class AddTodo {
   title!: string;
 desc!:string;
 @Output() todoAdd: EventEmitter<Todo> = new EventEmitter();
 constructor(){}
-Onsubmit(){
+Onsubmit(form:any){
+  if (form.invalid || !this.title?.trim()){
+    alert("Please enter a title.");
+    return;
+  }
   const todo={
-    sno: 8,
+    sno: 1,
     title: this.title,
     desc: this.desc,
     active: true
-  }
+  };
   this.todoAdd.emit(todo);
+  form.resetForm();
 }
 }

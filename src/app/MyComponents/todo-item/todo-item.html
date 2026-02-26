@@ -1,6 +1,6 @@
-<div class="my-3">
+<div class="my-3" [ngClass]="{ 'completed': !todo.active }">
  <h5 [class]="todo.active?'nostrike':'strike'">{{todo.title}}</h5>
-<p>{{todo.desc}}</p>
+<p [class]="todo.active?'nostrike':'strike'">{{todo.desc}}</p>
 <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1" (click)="onCheckboxClick(todo)">
     <label class="form-check-label" for="exampleCheck1">Mark as done!</label>

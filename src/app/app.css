@@ -1,10 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+.navbar {
+  background-color: var(--retro-hot-pink) !important;
+  box-shadow: 
+    4px 4px 0 var(--retro-black),
+    inset 4px 4px 0 var(--retro-shadow-light),
+    inset -4px -4px 0 var(--retro-shadow-dark);
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+.navbar-brand {
+  color: var(--retro-white) !important;
+  text-transform: uppercase;
 }

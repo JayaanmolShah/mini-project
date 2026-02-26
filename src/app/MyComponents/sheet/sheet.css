@@ -1,89 +1,147 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined');
-:host {
-  display: flex;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-family: 'Press Start 2P';
-  --retro-button-color: var(--bright-blue);
-  --retro-shadow-light: color-mix(in srgb, #fff 20%, transparent);
-  --retro-shadow-dark: color-mix(in srgb, #000 20%, transparent);
-  --retro-elevated-shadow:
-    inset 4px 4px 0px 0px var(--retro-shadow-light),
-    inset -4px -4px 0px 0px var(--retro-shadow-dark), 4px 0px 0px 0px var(--tertiary-contrast),
-    0px 4px 0px 0px var(--tertiary-contrast), -4px 0px 0px 0px var(--tertiary-contrast),
-    0px -4px 0px 0px var(--tertiary-contrast);
-  --retro-flat-shadow:
-    4px 0px 0px 0px var(--tertiary-contrast), 0px 4px 0px 0px var(--tertiary-contrast),
-    -4px 0px 0px 0px var(--tertiary-contrast), 0px -4px 0px 0px var(--tertiary-contrast);
-  --retro-clickable-shadow:
-    inset 4px 4px 0px 0px var(--retro-shadow-light),
-    inset -4px -4px 0px 0px var(--retro-shadow-dark), 4px 0px 0px 0px var(--tertiary-contrast),
-    0px 4px 0px 0px var(--tertiary-contrast), -4px 0px 0px 0px var(--tertiary-contrast),
-    0px -4px 0px 0px var(--tertiary-contrast), 8px 8px 0px 0px var(--tertiary-contrast);
-  --retro-pressed-shadow:
-    inset 4px 4px 0px 0px var(--retro-shadow-dark),
-    inset -4px -4px 0px 0px var(--retro-shadow-light), 4px 0px 0px 0px var(--tertiary-contrast),
-    0px 4px 0px 0px var(--tertiary-contrast), -4px 0px 0px 0px var(--tertiary-contrast),
-    0px -4px 0px 0px var(--tertiary-contrast), 0px 0px 0px 0px var(--tertiary-contrast);
-}
 [ngTabs] {
-  width: 600px;
+  width: 700px;
+  margin: 30px auto;
 }
+
 [ngTabList] {
-  gap: 1rem;
   display: flex;
+  gap: 10px;
 }
+
 [ngTab] {
-  flex: 1;
-  outline: none;
-  padding: 1rem;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 8px;
   cursor: pointer;
   text-align: center;
-  color: #000;
-  background-color: #fff;
-  box-shadow: var(--retro-clickable-shadow);
-  transition:
-    transform 0.1s,
-    box-shadow 0.1s;
+  background: var(--retro-white);
+  color: var(--retro-black);
+font-size: 8px;            /* smaller font size */
+  padding: 4px 6px;          /* reduce padding to fit smaller text */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative; 
+  box-shadow:
+    4px 4px 0 var(--retro-black),
+    inset 4px 4px 0 var(--retro-shadow-light),
+    inset -4px -4px 0 var(--retro-shadow-dark);
+
+  transition: all 0.1s ease;
 }
-[ngTab]:focus,
+
+/* Hover */
 [ngTab]:hover {
-  transform: translate(1px, 1px);
+  background: var(--retro-light-pink);
 }
-[ngTab]:focus {
-  outline-offset: 2px;
-  outline: 4px dashed var(--bright-blue);
-}
-[ngTab]:hover {
-  background-color: color-mix(in srgb, var(--bright-blue) 50%, #fff);
-}
-[ngTab]:active,
+
+/* Active tab */
 [ngTab][aria-selected='true'] {
-  color: var(--page-background);
-  background-color: var(--bright-blue);
-  box-shadow: var(--retro-pressed-shadow);
+  background: var(--retro-hot-pink);
+  color: var(--retro-white);
   transform: translate(4px, 4px);
+  box-shadow:
+    inset 4px 4px 0 var(--retro-shadow-dark),
+    inset -4px -4px 0 var(--retro-shadow-light);
 }
+
 [ngTabPanel] {
-  flex: 1;
-  font-size: 1.5rem;
-  color: #000;
-  background-color: #fff;
-  padding: 1rem;
-  margin-top: 1rem;
-  min-height: 100px;
-  display: grid;
-  place-items: center;
-  box-shadow: var(--retro-flat-shadow);
-  background: linear-gradient(rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.1) 50%);
-  background-color: color-mix(in srgb, var(--bright-blue) 10%, #fff);
-  background-size: 100% 4px;
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--retro-black);
+  color: var(--retro-white);
+
+  box-shadow:
+    6px 6px 0 var(--retro-black),
+    inset 4px 4px 0 var(--retro-shadow-light),
+    inset -4px -4px 0 var(--retro-shadow-dark);
 }
-[ngTabPanel]:focus {
-  outline-offset: 4px;
-  outline: 4px dashed var(--bright-blue);
-}
+
 [ngTabPanel][inert] {
   display: none;
+}
+
+.add-tab-btn {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  border-radius: 4px;
+  background: var(--retro-white);
+  color: var(--retro-hot-pink);
+  border: none;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--retro-black);
+  box-shadow: 3px 3px 0 var(--retro-black);
+  align-self: flex-end;
+}
+
+.close-btn {
+  position: absolute;       /* place it on top of the tab */
+  top: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  line-height: 14px;
+  padding: 0;
+  margin: 0;
+  background: var(--retro-white);
+  color: var(--retro-hot-pink);
+  border: none;
+  cursor: pointer;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 var(--retro-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.add-tab-btn:hover,
+.close-btn:hover {
+  background: var(--retro-black);
+  color: var(--retro-white);
+}
+
+.add-tab-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--retro-black);
+}
+.close-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--retro-black);
+}
+.btn {
+  background: var(--retro-white);
+  color: var(--retro-hot-pink);
+  border: none;
+  padding: 8px 12px;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  cursor: pointer;
+
+  box-shadow: 4px 4px 0 var(--retro-black);
+  transition: all 0.1s ease;
+}
+
+.btn:hover {
+  background: var(--retro-black);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.tab-title-input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  text-align: center;
+  font-family: inherit;
 }

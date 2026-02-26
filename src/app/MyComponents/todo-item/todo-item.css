@@ -25,3 +25,49 @@
   background-color: #c82333;
   border-color: #c82333;
 }
+
+.btn {
+  background: var(--retro-hot-pink);
+  color: var(--retro-white);
+  border: none;
+  padding: 8px 12px;
+  font-family: 'Press Start 2P';
+  font-size: 10px;
+  cursor: pointer;
+
+  box-shadow: 4px 4px 0 var(--retro-black);
+  transition: all 0.1s ease;
+}
+
+.btn:hover {
+  background: var(--retro-black);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.my-3 {
+  background: var(--retro-light-pink);
+  padding: 15px;
+  margin-bottom: 15px;
+
+  box-shadow: 4px 4px 0 var(--retro-black);
+}
+
+.strike {
+  text-decoration: line-through;
+  color: var(--retro-black);
+  opacity: 0.6;
+}
+
+.nostrike {
+  text-decoration: none;
+}
+.completed {
+  background: #bfbfbf;
+  box-shadow: 4px 4px 0 #555;
+  opacity: 0.85;
+  transition: background 0.2s ease;
+}
