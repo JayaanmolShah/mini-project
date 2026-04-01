@@ -9,7 +9,7 @@ pipeline
         IMAGE_NAME        = "jayaanmol/angular-app"
         IMAGE_TAG         = "${BUILD_NUMBER}"
         GIT_CRED_ID       = "git-ssh-key"
-        GIT_REPO          = "git@github.com:JayaanmolShah/learning.git"
+        GIT_REPO          = "git@github.com:JayaanmolShah/mini-project.git"
         GIT_BRANCH        = "main"
     }
 
