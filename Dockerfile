@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Copy Angular build output (Angular 21 outputs to /browser directly)
-COPY browser/ /usr/share/nginx/html
+COPY browser/ /usr/share/nginx/html/
 
 # Copy nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
